@@ -10,8 +10,8 @@ const Card = ({ vacancy }) => {
         <div className="card-job-info">
           <div className="card-company-info">
             <h4>{vacancy.company}</h4>
-            {vacancy.new && <p>New!</p>}
-            {vacancy.new && <p>Featured</p>}
+            {vacancy.new && <p className="card-new">New!</p>}
+            {vacancy.new && <p className="card-featured">Featured</p>}
           </div>
           <h3>{vacancy.position}</h3>
           <ul className="card-vacancy-info">
