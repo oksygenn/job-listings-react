@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  background-color: yellow;
+}
+
+body {
+  background-color: red;
+}
+
+li {
+  list-style-type: none;
+}
+
+.card-logo {
+  background-color: green;
+}
+
+.card-logo img {
+  padding: 3rem;
+}
+
+.card-container {
+  margin: 2rem auto;
+  max-width: 1000px;
+  background-color: pink;
+  text-align: left;
+}
+
+.card {
+  /* background-color: rgb(175, 175, 253); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+.card-job-info {
+  display: flex;
+  flex-direction: column;
+  /* background-color: grey; */
+}
+
+.card-company-info {
+  display: flex;
+}
+
+.card-company-info > * {
+  margin: 1rem;
+}
+
+.card-vacancy-requirements {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: yellow;
+}
+
+.card-vacancy-requirements li {
+  margin: 1rem;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.card-vacancy-info {
+  display: flex;
+  justify-content: center;
+}
+
+.card-vacancy-info > * {
+  margin: 1rem;
+}
