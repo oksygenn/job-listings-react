@@ -28,22 +28,26 @@ li {
   margin: 2rem auto;
   max-width: 1000px;
   background-color: pink;
-  text-align: left;
 }
 
 .card {
   /* background-color: rgb(175, 175, 253); */
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  /* align-items: center; */
+  /* flex-direction: row; */
   margin: 1rem;
 }
 
+.test1 {
+  display: flex;
+}
 .card-job-info {
   display: flex;
   flex-direction: column;
-  /* background-color: grey; */
+  /* align-items: flex-start; */
+  background-color: grey;
+  text-align: left;
 }
 
 .card-company-info {
@@ -57,15 +61,16 @@ li {
 .card-vacancy-requirements {
   display: flex;
   justify-content: space-around;
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: yellow;
+  width: 400px;
 }
 
 .card-vacancy-requirements li {
-  margin: 1rem;
+  margin: 0.5rem;
   background-color: lightblue;
   border-radius: 10px;
-  padding: 0.4rem;
+  padding: 0.2rem;
 }
 
 .card-vacancy-info {

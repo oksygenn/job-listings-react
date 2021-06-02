@@ -2,8 +2,8 @@ import "../design/Card.css";
 
 const Card = ({ vacancy }) => {
   return (
-    <div className="card-container">
-      <div className="card">
+    <div className="card">
+      <section className="test1">
         <div className="card-logo">
           <img src={vacancy.logo} alt={`${vacancy.company} logo`} />
         </div>
@@ -20,13 +20,15 @@ const Card = ({ vacancy }) => {
             <li>{vacancy.location}</li>
           </ul>
         </div>
+      </section>
+      <section>
         <ul className="card-vacancy-requirements">
           <li>{vacancy.role}</li>
           {vacancy.languages.map((language, index) => {
             return <li key={index}>{language}</li>;
           })}
         </ul>
-      </div>
+      </section>
     </div>
   );
 };
