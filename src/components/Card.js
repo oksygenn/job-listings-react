@@ -8,11 +8,21 @@ const Card = ({ vacancy }) => {
           <img src={vacancy.logo} alt={`${vacancy.company} logo`} />
         </div>
         <div className="card-job-info">
-          <div className="card-company-info">
-            <h4>{vacancy.company}</h4>
-            {vacancy.new && <p className="card-new">New!</p>}
-            {vacancy.new && <p className="card-featured">Featured</p>}
-          </div>
+          <ul className="card-company-info">
+            <li class="test2">
+              <h4>{vacancy.company}</h4>
+            </li>
+            {vacancy.new && (
+              <li>
+                <p className="card-new">New!</p>
+              </li>
+            )}
+            {vacancy.new && (
+              <li>
+                <p className="card-featured">Featured</p>
+              </li>
+            )}
+          </ul>
           <h3>{vacancy.position}</h3>
           <ul className="card-vacancy-info">
             <li>{vacancy.postedAt}</li>

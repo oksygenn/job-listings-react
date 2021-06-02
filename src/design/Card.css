@@ -32,6 +32,7 @@ li {
   box-shadow: 1px 9px 24px -5px rgba(100, 186, 187, 0.6);
   border-radius: 10px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 3rem;
 }
@@ -51,7 +52,7 @@ li {
   color: white;
   border-radius: 5px;
   font-weight: 700;
-  /* padding: 0.1rem; */
+  padding: 0.5rem;
 }
 
 .card-featured {
@@ -59,7 +60,7 @@ li {
   color: white;
   font-weight: 700;
   border-radius: 5px;
-  /* padding: 1rem; */
+  padding: 0.5rem;
 }
 
 .card-container {
@@ -74,12 +75,12 @@ li {
 }
 
 .card-job-info {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* align-items: flex-start; */
   /* background-color: grey; */
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .card-vacancy-requirements {
@@ -109,9 +110,10 @@ li {
 
 .card-company-info {
   display: flex;
+  align-items: center;
 }
 
-.card-company-info > h4 {
+.card-company-info > li > h4 {
   color: rgb(100, 186, 187);
 }
 
