@@ -4,80 +4,118 @@
   margin: 0;
 }
 
+h3,
+h4 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+}
+
+/* - Light Grayish Cyan (Background): hsl(180, 52%, 96%)
+- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%)
+- Dark Grayish Cyan: hsl(180, 8%, 52%)
+- Very Dark Grayish Cyan: hsl(180, 14%, 20%) */
+
 .App {
-  background-color: yellow;
+  background-color: hsl(180, 52%, 96%);
 }
 
 body {
-  background-color: red;
+  background-color: hsl(180, 29%, 50%);
 }
 
 li {
   list-style-type: none;
 }
 
+.card {
+  background-color: white;
+  box-shadow: 1px 9px 24px -5px rgba(100, 186, 187, 0.6);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+}
+
 .card-logo {
-  background-color: green;
+  /* background-color: green; */
+  display: flex;
+  align-self: center;
 }
 
 .card-logo img {
-  padding: 3rem;
+  padding: 1rem;
+}
+
+.card-new {
+  background-color: rgb(100, 186, 187);
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  /* padding: 0.1rem; */
+}
+
+.card-featured {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  /* padding: 1rem; */
 }
 
 .card-container {
-  margin: 2rem auto;
+  margin: 5rem auto;
   max-width: 1000px;
-  background-color: pink;
-}
-
-.card {
-  /* background-color: rgb(175, 175, 253); */
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  /* flex-direction: row; */
-  margin: 1rem;
+  padding: 3rem;
+  /* background-color: pink; */
 }
 
 .test1 {
   display: flex;
 }
+
 .card-job-info {
   display: flex;
   flex-direction: column;
   /* align-items: flex-start; */
-  background-color: grey;
+  /* background-color: grey; */
   text-align: left;
+  padding: 2rem;
+}
+
+.card-vacancy-requirements {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(100, 186, 187);
+  font-weight: 700;
+}
+
+.card-vacancy-requirements li {
+  margin: 0.5rem;
+  background-color: hsl(180, 52%, 96%);
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.card-vacancy-info {
+  display: flex;
+  color: grey;
+  /* justify-content: center; */
+}
+
+.card-vacancy-info > * {
+  margin-right: 1rem;
+  padding: 1rem 0;
 }
 
 .card-company-info {
   display: flex;
 }
 
+.card-company-info > h4 {
+  color: rgb(100, 186, 187);
+}
+
 .card-company-info > * {
-  margin: 1rem;
-}
-
-.card-vacancy-requirements {
-  display: flex;
-  justify-content: space-around;
-  /* padding: 2rem; */
-  background-color: yellow;
-  width: 400px;
-}
-
-.card-vacancy-requirements li {
-  margin: 0.5rem;
-  background-color: lightblue;
-  border-radius: 10px;
-  padding: 0.2rem;
-}
-
-.card-vacancy-info {
-  display: flex;
-  justify-content: center;
-}
-
-.card-vacancy-info > * {
-  margin: 1rem;
+  margin-right: 1rem;
+  padding: 1rem 0;
 }
