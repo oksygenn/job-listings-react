@@ -6,9 +6,11 @@ import Card from "./components/Card";
 function App() {
   return (
     <div className="App">
-      {vacancies.map((vacancy) => {
-        return <Card vacancy={vacancy} key={vacancy.id} />;
-      })}
+      <div className="card-container">
+        {vacancies.map((vacancy) => {
+          return <Card vacancy={vacancy} key={vacancy.id} />;
+        })}
+      </div>
     </div>
   );
 }
