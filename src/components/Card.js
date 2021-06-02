@@ -2,7 +2,7 @@ import "../design/Card.css";
 
 const Card = ({ vacancy }) => {
   return (
-    <div className="card">
+    <div className={vacancy.featured ? "card featured-border" : "card"}>
       <section className="test1">
         <div className="card-logo">
           <img src={vacancy.logo} alt={`${vacancy.company} logo`} />
@@ -14,16 +14,16 @@ const Card = ({ vacancy }) => {
             </li>
             {vacancy.new && (
               <li>
-                <p className="card-new">New!</p>
+                <p className="card-new">NEW!</p>
               </li>
             )}
             {vacancy.new && (
               <li>
-                <p className="card-featured">Featured</p>
+                <p className="card-featured">FEATURED</p>
               </li>
             )}
           </ul>
-          <h3>{vacancy.position}</h3>
+          <h4>{vacancy.position}</h4>
           <ul className="card-vacancy-info">
             <li>{vacancy.postedAt}</li>
             <li>{vacancy.contract}</li>
