@@ -134,3 +134,40 @@ li {
   margin-right: 1rem;
   padding: 1rem 0;
 }
+
+/* tag */
+
+.all-tags {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: pink;
+  width: 70%;
+  margin: 4rem auto;
+}
+
+.tag {
+  margin-bottom: 1rem;
+  padding: 0.4rem 0;
+  margin: 0.3rem;
+  color: rgb(100, 186, 187);
+}
+
+.tag-enabled {
+  background-color: hsl(180, 65%, 97%);
+}
+
+.tag-disabled {
+  background-color: rgb(218, 218, 218);
+}
+
+.icon-remove {
+  background-color: rgb(3, 110, 116);
+  padding: 0.2rem;
+  margin-left: 0.2rem;
+}
+
+/* .icon-remove > img:hover {
+  background-color: rgb(4, 57, 59);
+} */
