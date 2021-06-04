@@ -1,11 +1,12 @@
-// import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
-import vacancies from "./data/data.json";
-import Card from "./components/Card";
+import data from "./data/data.json";
+import Cards from "./components/Cards";
+import Tag from "./components/Tag";
 
 function App() {
-  vacancies.forEach((vacancy) => {
+  // adds new property "tags" to each vacancy
+  data.forEach((vacancy) => {
     vacancy.tags = [
       vacancy.role,
       ...vacancy.tools,
@@ -14,58 +15,62 @@ function App() {
     ];
   });
 
+  // creates array of unique tags (CSS, JavaScript, Ruby....)
+  let uniqueTags = [];
+  for (let vacancy of data) {
+    for (let tag of vacancy.tags) {
+      if (!uniqueTags.includes(tag)) {
+        uniqueTags.push(tag);
+      }
+    }
+  }
+
   const [clickedTags, setClickedTags] = useState([]);
-  const [jobs, setJobs] = useState(vacancies);
-  console.log("jobs yo", jobs);
 
-  const addTagToFilter = (tag) => {
-    const newClickedTags = [...clickedTags, tag];
-    setClickedTags(newClickedTags);
-    updateJobs(newClickedTags);
+  const handleTagClick = (tag) => {
+    if (!clickedTags.includes(tag)) {
+      setClickedTags([...clickedTags, tag]);
+    }
   };
 
-  const updateJobs = (clickedTags) => {
-    console.log(clickedTags);
-    const j = vacancies.filter((vacancy) => {
-      return (
-        vacancy.tags.filter((tag) => {
-          return clickedTags.includes(tag);
-        }).length > 0
-      );
-    });
-    console.log(j);
-    setJobs(j);
-  };
+  let vacancies = [];
+  if (clickedTags.length === 0) {
+    vacancies = data;
+  } else {
+    for (const vacancy of data) {
+      for (const tag of vacancy.tags) {
+        if (clickedTags.includes(tag)) {
+          vacancies.push(vacancy);
+          break;
+        }
+      }
+    }
 
+    // vacancies = vacancies.filter((vacancy) => {
+    //   return (
+    //     vacancy.tags.filter((tag) => {
+    //       return clickedTags.includes(tag);
+    //     }).length > 0
+    //   );
+    // });
+  }
 
-  // adds new property "tags" to vacancies object
+  console.log("tags", clickedTags);
 
   return (
     <div className="App">
-      <div className="filtered-vacancies-container">
-        <p>{clickedTags}</p>
-      </div>
-      <div className="card-container">
-        {jobs.map((vacancy, index) => {
+      <ul className="all-tags">
+        {uniqueTags.map((uniqueTag) => {
           return (
-            <Card
-              vacancy={vacancy}
-              key={vacancy.id}
-              // setClickedTags={setClickedTags}
-              // setTags={setTags}
-              // handleTagClick={(el) => {
-              //   const test = vacancy.tags.filter((tag) => {
-              //     return el.includes(tag);
-              //   });
-
-              //   console.log("my test " + test);
-              //   setClickedTags(test);
-              // }}
-              handleTagClick={addTagToFilter}
+            <Tag
+              enabled={clickedTags.includes(uniqueTag)}
+              uniqueTag={uniqueTag}
+              handleTagClick={handleTagClick}
             />
           );
         })}
-      </div>
+      </ul>
+      <Cards vacancies={vacancies} />
     </div>
   );
 }
