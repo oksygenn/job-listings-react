@@ -2,10 +2,22 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* font-family: "Spartan", sans-serif; */
 }
+
+/* .App {
+  padding: 3rem 0;
+} */
 
 h4 {
   font-weight: 700;
+}
+
+.filtered-vacancies-container {
+  display: block;
+  background-color: rgb(15, 188, 211);
+  height: 100px;
+  margin-top: 4rem;
 }
 
 /* - Light Grayish Cyan (Background): hsl(180, 52%, 96%)
@@ -19,8 +31,6 @@ h4 {
 
 body {
   background-color: hsl(180, 29%, 50%);
-  /* font-family: "Spartan", sans-serif; */
-  /* font-size: 0.8rem; */
 }
 
 li {
@@ -34,11 +44,10 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 3rem;
+  margin: 1rem;
 }
 
 .card-logo {
-  /* background-color: green; */
   display: flex;
   align-self: center;
 }
@@ -57,7 +66,7 @@ li {
 }
 
 .card-featured {
-  background-color: black;
+  background-color: rgb(1, 54, 56);
   color: white;
   font-weight: 700;
   border-radius: 50px;
@@ -73,7 +82,6 @@ li {
   margin: 5rem auto;
   max-width: 1000px;
   padding: 3rem;
-  /* background-color: pink; */
 }
 
 .test1 {
@@ -81,10 +89,9 @@ li {
 }
 
 .card-job-info {
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: flex-start; */
-  /* background-color: grey; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
   padding: 1rem;
 }
@@ -93,6 +100,7 @@ li {
   display: flex;
   justify-content: space-around;
   color: rgb(100, 186, 187);
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
@@ -106,9 +114,6 @@ li {
 .card-vacancy-info {
   display: flex;
   color: grey;
-  /* font-family: "Spartan", sans-serif; */
-  font-size: 0.8rem;
-  /* justify-content: center; */
 }
 
 .card-vacancy-info > * {

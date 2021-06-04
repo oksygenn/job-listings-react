@@ -1,6 +1,15 @@
 import "../design/Card.css";
 
-const Card = ({ vacancy }) => {
+const Card = ({ vacancy, handleTagClick }) => {
+  // const handleTagClick = (el) => {
+  //   const test = vacancy.tags.filter((tag) => {
+  //     return el.includes(tag);
+  //   });
+
+  //   console.log("my test " + test);
+  //   setClickedTags(test);
+  // };
+
   return (
     <div className={vacancy.featured ? "card featured-border" : "card"}>
       <section className="test1">
@@ -9,15 +18,15 @@ const Card = ({ vacancy }) => {
         </div>
         <div className="card-job-info">
           <ul className="card-company-info">
-            <li class="test2">
+            <li>
               <h4>{vacancy.company}</h4>
             </li>
             {vacancy.new && (
-              <li>
+              <li className="test3">
                 <p className="card-new">NEW!</p>
               </li>
             )}
-            {vacancy.new && (
+            {vacancy.featured && (
               <li>
                 <p className="card-featured">FEATURED</p>
               </li>
@@ -33,10 +42,17 @@ const Card = ({ vacancy }) => {
       </section>
       <section>
         <ul className="card-vacancy-requirements">
-          <li>{vacancy.role}</li>
+          {vacancy.tags.map((tag) => {
+            return <li onClick={() => handleTagClick(tag)}>{tag}</li>;
+          })}
+          {/* <li>{vacancy.role}</li>
+          <li>{vacancy.level}</li>
           {vacancy.languages.map((language, index) => {
             return <li key={index}>{language}</li>;
           })}
+          {vacancy.tools.map((tool) => {
+            return <li>{tool}</li>;
+          })} */}
         </ul>
       </section>
     </div>
